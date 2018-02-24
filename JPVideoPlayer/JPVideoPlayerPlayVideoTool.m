@@ -385,6 +385,10 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     }
 }
 
+- (void)reset {
+    [self.currentPlayVideoItem reset];
+}
+
 
 #pragma mark - App Observer
 

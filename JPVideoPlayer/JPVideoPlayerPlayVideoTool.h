@@ -152,4 +152,6 @@ typedef void(^JPVideoPlayerPlayVideoToolPlayingProgressBlock)(CGFloat progress);
  */
 - (void)resume;
 
+- (void)reset;
+
 @end
