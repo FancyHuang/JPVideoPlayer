@@ -117,7 +117,10 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         return;
     }
     [self.player play];
-    self.player.rate = [JPVideoPlayerPlayVideoTool sharedTool].videoRate;
+    CGFloat videoRate = [JPVideoPlayerPlayVideoTool sharedTool].videoRate;
+    if (videoRate) {
+        self.player.rate = [JPVideoPlayerPlayVideoTool sharedTool].videoRate;
+    }
     [self.player setVolume:0.0];
 }
 
@@ -175,6 +178,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     if (self) {
         [self addObserverOnce];
         _playVideoItems = [NSMutableArray array];
+        _videoRate = 1.0;
         
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];

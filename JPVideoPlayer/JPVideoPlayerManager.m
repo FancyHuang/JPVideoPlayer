@@ -448,14 +448,18 @@
 #pragma clang diagnostic pop
 }
 
+- (void)setVideoRate:(CGFloat)videoRate {
+    _videoRate = videoRate;
+    
+    [JPVideoPlayerPlayVideoTool sharedTool].videoRate = videoRate;
+}
+
 - (void)pause{
     [[JPVideoPlayerPlayVideoTool sharedTool] pause];
 }
 
 - (void)resume{
-    JPVideoPlayerPlayVideoTool *videoTool = [JPVideoPlayerPlayVideoTool sharedTool];
-    videoTool.videoRate = self.videoRate;
-    [videoTool resume];
+    [[JPVideoPlayerPlayVideoTool sharedTool] resume];
 }
 
 - (void)setPlayerMute:(BOOL)mute{

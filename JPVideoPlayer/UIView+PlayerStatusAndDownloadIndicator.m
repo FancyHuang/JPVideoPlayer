@@ -137,10 +137,10 @@ static char backgroundLayerKey;
 }
 
 - (void)jp_showActivityIndicatorView{
-    if (!self.activityIndicatorView.superview) {
-        [self.jp_indicatorView addSubview:self.activityIndicatorView];
-        [self.activityIndicatorView startAnimating];
-    }
+//    if (!self.activityIndicatorView.superview) {
+//        [self.jp_indicatorView addSubview:self.activityIndicatorView];
+//        [self.activityIndicatorView startAnimating];
+//    }
 }
 
 - (void)jp_hideActivityIndicatorView{
