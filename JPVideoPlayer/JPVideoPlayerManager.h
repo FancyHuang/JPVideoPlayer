@@ -148,6 +148,9 @@ typedef void(^JPVideoPlayerCompletionBlock)(NSString * _Nullable fullVideoCacheP
 
 @property (strong, nonatomic, readonly, nullable) JPVideoPlayerDownloader *videoDownloader;
 
+/** 播放速率 */
+@property (assign, nonatomic) CGFloat videoRate;
+
 #pragma mark - Singleton and initialization
 
 /**

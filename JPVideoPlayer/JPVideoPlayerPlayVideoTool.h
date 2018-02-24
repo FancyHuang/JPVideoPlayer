@@ -76,6 +76,8 @@ typedef void(^JPVideoPlayerPlayVideoToolPlayingProgressBlock)(CGFloat progress);
  */
 @property(nonatomic, strong, readonly, nullable)JPVideoPlayerPlayVideoToolItem *currentPlayVideoItem;
 
+/** 播放速率 */
+@property (assign, nonatomic) CGFloat videoRate;
 
 # pragma mark - Play video existed in disk.
 

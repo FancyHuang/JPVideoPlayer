@@ -117,6 +117,8 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         return;
     }
     [self.player play];
+    self.player.rate = [JPVideoPlayerPlayVideoTool sharedTool].videoRate;
+    [self.player setVolume:0.0];
 }
 
 - (void)reset{
@@ -173,6 +175,9 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     if (self) {
         [self addObserverOnce];
         _playVideoItems = [NSMutableArray array];
+        
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     }
     return self;
 }
@@ -441,6 +446,8 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         
         self.currentPlayVideoItem.lastTime = 0;
         [strong_Item.player play];
+        [strong_Item.player setVolume:0.0];
+        strong_Item.player.rate = self.videoRate;
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(playVideoTool:playingStatuDidChanged:)]) {
             [self.delegate playVideoTool:self playingStatuDidChanged:JPVideoPlayerPlayingStatusPlaying];
@@ -466,6 +473,8 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
                 if (!self.currentPlayVideoItem) return;
                 
                 [self.currentPlayVideoItem.player play];
+                [self.currentPlayVideoItem.player setVolume:1.0];
+                self.currentPlayVideoItem.player.rate = self.videoRate;
                 [self hideActivaityIndicatorView];
                 
                 [self displayVideoPicturesOnShowLayer];

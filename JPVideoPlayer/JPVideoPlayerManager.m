@@ -453,7 +453,9 @@
 }
 
 - (void)resume{
-    [[JPVideoPlayerPlayVideoTool sharedTool] resume];
+    JPVideoPlayerPlayVideoTool *videoTool = [JPVideoPlayerPlayVideoTool sharedTool];
+    videoTool.videoRate = self.videoRate;
+    [videoTool resume];
 }
 
 - (void)setPlayerMute:(BOOL)mute{
