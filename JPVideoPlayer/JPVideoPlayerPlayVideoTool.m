@@ -122,6 +122,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         self.player.rate = [JPVideoPlayerPlayVideoTool sharedTool].videoRate;
     }
     [self.player setVolume:0.0];
+    [JPVideoPlayerPlayVideoTool sharedTool].isMute = YES;
 }
 
 - (void)reset{
@@ -456,6 +457,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         [strong_Item.player play];
         [strong_Item.player setVolume:0.0];
         strong_Item.player.rate = self.videoRate;
+        self.isMute = YES;
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(playVideoTool:playingStatuDidChanged:)]) {
             [self.delegate playVideoTool:self playingStatuDidChanged:JPVideoPlayerPlayingStatusPlaying];
@@ -483,6 +485,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
                 [self.currentPlayVideoItem.player play];
                 [self.currentPlayVideoItem.player setVolume:1.0];
                 self.currentPlayVideoItem.player.rate = self.videoRate;
+                self.isMute = YES;
                 [self hideActivaityIndicatorView];
                 
                 [self displayVideoPicturesOnShowLayer];

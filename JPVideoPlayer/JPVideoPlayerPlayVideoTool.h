@@ -78,6 +78,8 @@ typedef void(^JPVideoPlayerPlayVideoToolPlayingProgressBlock)(CGFloat progress);
 
 /** 播放速率 */
 @property (assign, nonatomic) CGFloat videoRate;
+/** 是否无声播放 */
+@property (assign, nonatomic) BOOL isMute;
 
 # pragma mark - Play video existed in disk.
 
