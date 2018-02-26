@@ -390,6 +390,11 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     [self.currentPlayVideoItem reset];
 }
 
+- (void)setIsMute:(BOOL)isMute {
+    _isMute = isMute;
+    
+    self.currentPlayVideoItem.player.muted = isMute;
+}
 
 #pragma mark - App Observer
 
