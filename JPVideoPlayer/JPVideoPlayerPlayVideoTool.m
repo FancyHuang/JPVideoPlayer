@@ -485,7 +485,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
                 [self.currentPlayVideoItem.player play];
                 [self.currentPlayVideoItem.player setVolume:1.0];
                 self.currentPlayVideoItem.player.rate = self.videoRate;
-                self.isMute = YES;
+                self.isMute = NO;
                 [self hideActivaityIndicatorView];
                 
                 [self displayVideoPicturesOnShowLayer];
